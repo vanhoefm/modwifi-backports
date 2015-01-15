@@ -2,7 +2,7 @@
 set -e
 
 # FIXME: Specify the research branch of linux repository
-./gentree.py --clean ../linux/ ../release/
+./gentree.py --clean ../linux/ ../drivers/
 
 echo "Creating archive ..."
-tar -czf ../release.tar.gz ../release/
+tar -cf ../drivers.tar ../drivers/
