@@ -830,6 +830,7 @@ def process(kerneldir, copy_list_file, git_revision=None,
         'Kconfig.sources',
         'compat/',
         'backport-include/',
+        'unload.sh',
     ]]
 
     if not bpid.integrate:
