@@ -155,7 +155,7 @@ def _main():
     if args.profile_cocci:
         extra_spatch_args.append('--profile')
     jobs = 0
-    if args.jobs > 0:
+    if args.jobs is not None and args.jobs > 0:
         jobs = args.jobs
 
     output = threaded_spatch(args.cocci_file,
