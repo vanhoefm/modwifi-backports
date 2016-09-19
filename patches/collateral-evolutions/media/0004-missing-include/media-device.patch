@@ -2,11 +2,10 @@ diff --git a/include/media/media-device.h b/include/media/media-device.h
 index d385589..6d9a84d 100644
 --- a/include/media/media-device.h
 +++ b/include/media/media-device.h
-@@ -23,6 +23,7 @@
+@@ -23,5 +23,6 @@
  #ifndef _MEDIA_DEVICE_H
  #define _MEDIA_DEVICE_H
  
 +#include <linux/idr.h>
- #include <linux/kref.h>
  #include <linux/list.h>
  #include <linux/mutex.h>
