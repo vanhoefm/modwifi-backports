@@ -20,13 +20,12 @@
  
  		/* Provide to idev a hu reference which is used to run LPM
  		 * transactions (lpm suspend/resume) from PM callbacks.
-@@ -1306,14 +1310,17 @@ static int intel_probe(struct platform_d
+@@ -1306,13 +1310,16 @@ static int intel_probe(struct platform_d
  
  	idev->pdev = pdev;
  
 +#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,17,0)
- 	idev->reset = devm_gpiod_get_optional(&pdev->dev, "reset",
- 					      GPIOD_OUT_LOW);
+ 	idev->reset = devm_gpiod_get(&pdev->dev, "reset", GPIOD_OUT_LOW);
  	if (IS_ERR(idev->reset)) {
  		dev_err(&pdev->dev, "Unable to retrieve gpio\n");
  		return PTR_ERR(idev->reset);
