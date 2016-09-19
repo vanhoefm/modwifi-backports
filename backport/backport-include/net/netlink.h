@@ -189,4 +189,13 @@ static inline __le64 nla_get_le64(const struct nlattr *nla)
 }
 #endif /* < 4.4 */
 
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4,7,0)
+#define nla_put_u64_64bit LINUX_BACKPORT(nla_put_u64_64bit)
+static inline int nla_put_u64_64bit(struct sk_buff *skb, int attrtype,
+				    u64 value, int padattr)
+{
+	return nla_put_u64(skb, attrtype, value);
+}
+#endif /* < 4.7 */
+
 #endif /* __BACKPORT_NET_NETLINK_H */
