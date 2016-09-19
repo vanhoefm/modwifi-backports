@@ -11,11 +11,12 @@
 #include <linux/export.h>
 #include <linux/list.h>
 #include <linux/rcupdate.h>
-#include <linux/rhashtable.h>
 #include <linux/slab.h>
 #include <linux/spinlock.h>
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,1,0)
+#include <linux/rhashtable.h>
+
 /**
  * rhashtable_walk_init - Initialise an iterator
  * @ht:		Table to walk over
